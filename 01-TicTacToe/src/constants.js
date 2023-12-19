@@ -1,5 +1,5 @@
 export const TURNS = { //turnos
-    X: '❌',
+    X: 'X',
     O: '〇'
   }
   
