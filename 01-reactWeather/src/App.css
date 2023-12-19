@@ -9,3 +9,13 @@
   background-color: rgb(8, 2, 100);
 
 }
+.lluvia{
+  width: 100%;
+}
+.principal{
+  width: 20%;
+}
+main{
+  display: block;
+  border: solid 1em red;
+}
