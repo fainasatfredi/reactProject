@@ -1,12 +1,15 @@
 #root {
-  
+  width: 100%;
   margin: 0 auto;
   padding: 0 auto;
   text-align: center;
   
 }
 .cuerpo{
-  background-color: rgb(8, 2, 100);
+  background-image: url('assets/img/imgLluvia.jpg');
+  background-size:cover;
+  background-repeat:no-repeat ;
+
 
 }
 .lluvia{
@@ -17,5 +20,19 @@
 }
 main{
   display: block;
-  border: solid 1em red;
+  border: solid 1px red;
+
+}
+.icon{
+  width: 2.5%;
+}
+.blanco{
+  color: white;
+}
+.gris{
+  color: gray;
+}.escribir{
+  width: 95%;
+}.buscar{
+  width: 5%;
 }

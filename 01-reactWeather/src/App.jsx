@@ -7,9 +7,9 @@ export default function App() {
 
   return (
     <div >
-      <body className='cuerpo'>
+      <body className='cuerpo d-block'>
         <Navegador/>
-        <main className='d-block'>
+        <main>
           <Formulario></Formulario>
           <Cartas></Cartas>
         </main>
