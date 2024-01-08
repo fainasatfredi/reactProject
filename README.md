@@ -8,5 +8,4 @@ Este proyecto implementa el juego clásico Tic Tac Toe utilizando React. Permite
 ## Estructura del Proyecto
 
     src/components/Square.js: Componente para representar una celda individual del juego.
-    src/components/Board.js: Componente que contiene las celdas del tablero.
-    src/components/Game.js: Componente principal que maneja el estado del juego y renderiza el tablero y la información del juego.
+    src/components/WinnerModal.js: Componente que contiene las celdas del tablero.
