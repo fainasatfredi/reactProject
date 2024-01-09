@@ -35,4 +35,9 @@ main{
   width: 95%;
 }.buscar{
   width: 5%;
+  background-image: url("src/assets/img/search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  vertical-align: middle;
 }
