@@ -1,3 +1,5 @@
+import imagenes from "../assets/imagenes"
+
 export function CartaPeque(){
     return(
         
@@ -7,7 +9,7 @@ export function CartaPeque(){
                 <div class="card bg-white bg-opacity-50">
                     <div class="card-body">
                     <h1 className="blanco">LLUVIA</h1>
-                    <Imagenes/>
+                    #<img src={imagenes.img1} className="w-100"  />
                     
                     </div>
                 </div>
@@ -17,11 +19,4 @@ export function CartaPeque(){
         </div>
     )
 
-}
-function Imagenes(){
-  return(
-      <div>
-          <img src="src/assets/img/lluvia1.png" alt=" " className="lluvia opacity-100 "/>
-      </div>
-  )
 }
