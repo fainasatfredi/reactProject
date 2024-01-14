@@ -1,3 +1,4 @@
+import Imagenes from "../assets/imagenes";
 
 
 export function CartaGrande(){
@@ -7,19 +8,12 @@ export function CartaGrande(){
         <div className="card col-9 m-auto mt-5 bg-white bg-opacity-50  ">
             <div className="card-body">
               <div className="principal m-auto">
-                <h1 className="blanco">LLUVIA</h1>
-                <Imagenes/>
+                <h1 className="blanco"></h1>
+                <img src={Imagenes(imagen)} className="w-100"  />
               </div>        
             </div>
         </div>
       </div>
     )
 
-}
-function Imagenes(){
-  return(
-      <div>
-          <img src="src/assets/img/lluvia1.png" alt=" " className="lluvia opacity-100 "/>
-      </div>
-  )
 }

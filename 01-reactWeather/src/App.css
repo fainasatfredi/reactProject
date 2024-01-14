@@ -40,4 +40,6 @@ main{
   background-position: center;
   background-size: contain;
   vertical-align: middle;
+}.imagen{
+  width: 10%;
 }
