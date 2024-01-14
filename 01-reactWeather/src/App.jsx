@@ -53,7 +53,6 @@ export default function App() {
         {(values) ? (
           <div className='card-container'>
             <h1 className='city-name'>{values.name}</h1>
-            <p></p>
             <p className='temp'>{values.main.temp.toFixed(0)}&deg;</p>
             <img className='imagen' src={Imagenes(imagen)} alt="icon-weather" />
             <div className='card-footer'>
@@ -68,7 +67,80 @@ export default function App() {
         )}
 
       </div>
+      <div className='d-flex w-75 m-auto'>
+      <div className='card mt-4 col-3 '>
 
+      {(values) ? (
+          <div className='card-container'>
+            <h1 className='city-name'>{values.name}</h1>
+            <p className='temp'>{values.main.temp.toFixed(0)}&deg;</p>
+            <img className='w-25' src={Imagenes(imagen)} alt="icon-weather" />
+            <div className='card-footer'>
+              <p className='temp-max-min'>{values.main.temp_min.toFixed(0)}&deg;  |  {values.main.temp_max.toFixed(0)}&deg;</p>
+              <p>{values.wind.speed}</p>
+            </div>
+          </div>
+          
+          
+        ) : (
+          <h1>{"City not found"}</h1>
+        )}
+      </div>
+      <div className='card mt-4 col-3 '>
+
+      {(values) ? (
+          <div className='card-container'>
+            <h1 className='city-name'>{values.name}</h1>
+            <p className='temp'>{values.main.temp.toFixed(0)}&deg;</p>
+            <img className='w-25  ' src={Imagenes(imagen)} alt="icon-weather" />
+            <div className='card-footer'>
+              <p className='temp-max-min'>{values.main.temp_min.toFixed(0)}&deg;  |  {values.main.temp_max.toFixed(0)}&deg;</p>
+              <p>{values.wind.speed}</p>
+            </div>
+          </div>
+          
+          
+        ) : (
+          <h1>{"City not found"}</h1>
+        )}
+      </div>
+      <div className='card mt-4 col-3 '>
+
+      {(values) ? (
+          <div className='card-container'>
+            <h1 className='city-name'>{values.name}</h1>
+            <p className='temp'>{values.main.temp.toFixed(0)}&deg;</p>
+            <img className='w-25' src={Imagenes(imagen)} alt="icon-weather" />
+            <div className='card-footer'>
+              <p className='temp-max-min'>{values.main.temp_min.toFixed(0)}&deg;  |  {values.main.temp_max.toFixed(0)}&deg;</p>
+              <p>{values.wind.speed}</p>
+            </div>
+          </div>
+          
+          
+        ) : (
+          <h1>{"City not found"}</h1>
+        )}
+      </div>
+      <div className='card mt-4 col-3 '>
+
+      {(values) ? (
+          <div className='card-container'>
+            <h1 className='city-name'>{values.name}</h1>
+            <p className='temp'>{values.main.temp.toFixed(0)}&deg;</p>
+            <img className='w-25' src={Imagenes(imagen)} alt="icon-weather" />
+            <div className='card-footer'>
+              <p className='temp-max-min'>{values.main.temp_min.toFixed(0)}&deg;  |  {values.main.temp_max.toFixed(0)}&deg;</p>
+              <p>{values.wind.speed}</p>
+            </div>
+          </div>
+          
+          
+        ) : (
+          <h1>{"City not found"}</h1>
+        )}
+      </div>
+      </div>
     </body>  
   )
 }
