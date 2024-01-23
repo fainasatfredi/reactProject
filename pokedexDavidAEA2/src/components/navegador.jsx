@@ -36,16 +36,33 @@ export default function Navegador(){
         getData()
       },[buscar]) 
     return( 
-    <div className="fixed-top ">
+    <div className="fixed-top bg-black">
         <header className="d-flex">
-            <div className="w-50 border-bottom">  
-                <button className="bg-white border-bottom text-start " onClick={atras}> <img src="src/assets/img/atras.svg" alt="" className="start-0 " /></button>
+            <div className="w-75">  
+                <button className=" text-start " >
+                  <h3>Kanto</h3>
+                </button>
+                <button className="  text-start " >
+                  <h3>Johto</h3>
+                </button>
+                <button className="  text-start " >
+                  <h3>Hoenn</h3>
+                </button>
+                <button className=" text-start " >
+                  <h3>Sinnoh</h3>
+                </button>
+                <button className="  text-start " >
+                  <h3>Unova</h3>
+                </button>
+                <button className="  text-start " >
+                  <h3>Kalos</h3>
+                </button>
             </div> 
             <div className="w-50 d-flex "> 
-                <button className="bg-white  " onClick={toggleFormulario}><img src="src/assets/img/search.svg" alt="" /></button>
+                <button className="bg-white border-black circulo " onClick={toggleFormulario}><img src="src/assets/img/search.svg" alt="" /></button>
                 {mostrarFormulario && (
                 <form className="w-100 medio ">
-                <input type="text" id={handleSearch} name="campoTexto" className=" w-75"/>
+                <input type="text" id={handleSearch} name="campoTexto" className="inform ms-3 "/>
                 </form>
             )}
             </div>
