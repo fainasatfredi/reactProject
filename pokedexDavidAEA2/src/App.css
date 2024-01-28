@@ -24,4 +24,6 @@ margin: auto 0;
 }.mostrarCartas{
   width: 80%;
   
+}.gris{
+  background-color: grey;
 }

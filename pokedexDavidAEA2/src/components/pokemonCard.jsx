@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function PokemonCard({ pokemon }) {
-    const [pokemonImg,setPokemonImg]=useState(null)
-    const mostrarImg=()=>{
-        
-
-    }
+    
     return (
         <div className='mostrarCartas col-4 mt-5'>
             <div className="card mostrarCartas m-auto ">

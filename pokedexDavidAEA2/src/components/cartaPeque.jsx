@@ -3,6 +3,11 @@ import PokemonCard from "./pokemonCard";
 
 export default function CartasPokedex() {
     const [listaPokemon, setListaPokemon] = useState([]);
+    const[imagenes,setImagenes]=useState();
+    const url="'https://pokeapi.co/api/v2/";
+    const fetchImagen= ({imagen})=>{
+
+    }
     useEffect(() => {
         const fetchPokemonList = async () => {
           try {
