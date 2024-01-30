@@ -6,7 +6,7 @@ import CartasPokemon from './components/cartasPokemon'
 export default function App() {
   return (
     <>
-      <div className=' container-fluid w-100'>
+      <div className=' container-fluid p-0'>
         <Navegador></Navegador>
         <CartasPokemon></CartasPokemon>
    
