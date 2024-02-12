@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-export default function CartasPokemon({ pokemon }) {
+export default function CartasPokemon() {
     const urlPokemon = "https://pokeapi.co/api/v2/pokemon?limit=151";
     const [listaPokemon, setListaPokemon] = useState([]);
 
     useEffect(() => {
+        
         const getListaPokemons = async () => {
             try {
                 const respuesta = await fetch(urlPokemon);
@@ -16,10 +17,11 @@ export default function CartasPokemon({ pokemon }) {
                     return {
                         id: ima.id,
                         name: ima.name,
-                        img: ima.sprites.other.dream_world.front_default
+                        img: ima.sprites.other['official-artwork'].front_default,
+                        types: ima.types.map(type => type.type.name).join(', '),
+                        height:ima.height,
+                        weight:ima.weight
                     }
-
-
                 })
                 setListaPokemon(await Promise.all(imagenes));
             } catch (error) {
@@ -36,13 +38,15 @@ export default function CartasPokemon({ pokemon }) {
                 {listaPokemon && listaPokemon.length > 0 ? (
                     listaPokemon.map((pokemon, index) => (
                         <div key={index} className="  mt-5">
-                            <div className="card text-center m-auto d-flex" style={{ width: '30rem', height: "30rem" }} >
-                                <div className="card-body "style={{alignItems:"flex-end"}}>
+                            <div className="card text-center m-auto d-flex" style={{ width: '30rem', height: "21rem" }} >
+                                <div className="card-body "style={{alignItems:"center"}}>
                                         <h5 className="card-title  ">{pokemon.name}</h5>
                                         <div className='w-75 mx-auto my-5 ' style={{width:"60%",height:"50%"}} >
-                                            <img className="" style={{ width: '10rem', height: "10rem" }} src={pokemon.img} alt="" />
+                                            <img style={{ width: '10rem', height: "10rem"}} src={pokemon.img} alt="" />
+                                            <h5 className="card-title mx-auto my-auto " >{pokemon.types}</h5>
+                                            <h5 className="card-title mx-auto my-auto " >{pokemon.species}</h5>
                                         </div>
-                                        <h5 className="card-title mx-auto " style={{border:"solid 2px black",marginTop:"4em"}}>{pokemon.id}</h5>
+                                        <h5 className="card-title mx-auto my-auto " >{pokemon.id}</h5>
                                 </div>
                             </div>
                         </div>

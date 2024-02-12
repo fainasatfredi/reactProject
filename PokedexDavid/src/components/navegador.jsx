@@ -5,9 +5,10 @@ import CartaBusqueda from './cartaBusqueda';
 export default function Navegador() {
     const [buscar, setBuscar] = useState('');
     const [pokemon, setPokemon] = useState(null);
-
+    const urlPokemon = `https://pokeapi.co/api/v2/pokemon/${buscar.toLowerCase()}`;
+    
     const buscarPokemon = async () => {
-        const urlPokemon = `https://pokeapi.co/api/v2/pokemon/${buscar.toLowerCase()}`;
+        urlPokemon
         try {
             const response = await fetch(urlPokemon);
             if (response.ok) {
@@ -39,6 +40,7 @@ export default function Navegador() {
                                     <button className="nav-link text-white " href="#"><h3>Joenn</h3></button>
                                 </li>
                             </ul>
+                            <button className="btn btn-outline-success me-3" type="button">Shiny</button>
                             <form onSubmit={e=>{e.preventDefault();}} className="d-flex" role="search">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => setBuscar(e.target.value)} />
                                 <button className="btn btn-outline-success" onClick={buscarPokemon} type="button">Search</button>

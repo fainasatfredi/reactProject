@@ -9,7 +9,8 @@ export default function App() {
   const [buscar, setBuscar] = useState('madrid');
   const [values, setValues] = useState('')
   const [imagen, setImagen] = useState('')
-
+//https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=fab27ef47e62a91ab5f42b5be756e304
+  
   const URL = `https://api.openweathermap.org/data/2.5/weather?q=${buscar}&lang=es&units=metric&appid=`+apiKey;
 
   const getData = async () => {
