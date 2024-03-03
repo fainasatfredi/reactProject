@@ -11,5 +11,15 @@ body{
 } 
 
 .gris{
-  background-color: grey;
+  background-image: url("../fondoPokemon.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}.puntero:hover{
+  cursor: crosshair;
+  background-color: black;
+  border-radius: 2em;
+
+}.radio{
+  border-radius: 5em;
 }
