@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import {colors} from '../styles/colors'
-import {Text, TouchableOpacity, ImageBackground, View } from 'react-native';
+import { Text, TouchableOpacity, ImageBackground, View, StyleSheet } from 'react-native';
 import Tablero from './tablero';
+import {colors} from '../styles/colors'; // Asegúrate de que este archivo exista y esté correctamente exportado.
 
-export default function Inicio(){
-    const [currentView, setCurrentView] = useState('inicio'); // Estado para controlar la vista actual
+export default function Inicio() {
+  const [currentView, setCurrentView] = useState('inicio');
 
+  const handleChangeView = (view) => {
+    setCurrentView(view);
+  };
   return currentView === 'inicio' ? (
     <ImageBackground
       source={require('../assets/tetrisFondo.png')}
@@ -16,46 +19,45 @@ export default function Inicio(){
       </View>
       <TouchableOpacity
         style={styles.playButton}
-        onPress={() => setCurrentView('juego')} // Cambia la vista actual a Juego
+        onPress={() => setCurrentView('juego')}
       >
         <Text style={styles.playButtonText}>JUGAR</Text>
       </TouchableOpacity>
     </ImageBackground>
   ) : (
-    <Tablero /> // Renderiza el componente Juego si currentView es 'juego'
+    <Tablero onChangeView={handleChangeView} />
   );
 }
-const styles = {
-    container: {
-        width:"100%",
-        height:"100%"
-     
-    },
-    header: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: 80, // Adjust the value as per your design
-    },
-    title: {
-      color: '#FFA500', // Sample color for the text
-      fontSize: 48, // Adjust the size as per your design
-      fontWeight: 'bold',
-    },
-    playButton: {
-      marginBottom: 350, // Adjust the value as per your design
-      backgroundColor: '#9400D3', // Sample purple color
-      paddingVertical: 15,
-      borderRadius: 25,
-      alignItems: "center",
-      width:"50%",
-      marginLeft:"25%"
-      
-    },
-    playButtonText: {
-      color: colors.white,
-      fontSize: 24, // Adjust the size as per your design
-      fontWeight: 'bold',
-    },
-  };
-  
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  header: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 80,
+  },
+  title: {
+    color: '#FFA500',
+    fontSize: 48,
+    fontWeight: 'bold',
+  },
+  playButton: {
+    marginBottom: 350,
+    backgroundColor: '#9400D3',
+    paddingVertical: 15,
+    borderRadius: 25,
+    alignItems: "center",
+    alignSelf: 'center',
+    width: "50%",
+  },
+  playButtonText: {
+    color: colors.white,
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+});
