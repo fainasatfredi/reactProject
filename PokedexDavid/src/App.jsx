@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import Navegador from './components/Navegador';
+import Navegador from './components/navegador';
 import CartasPokemon from './components/cartasPokemon';
-import CartaBusqueda from './components/CartaBusqueda';
+import CartaBusqueda from './components/cartaBusqueda';
 
 export default function App() {
   const [pokemon, setPokemon] = useState(null);

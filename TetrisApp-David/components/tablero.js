@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Modal, View, StyleSheet, Text, TouchableOpacity, ImageBackground, Button } from 'react-native';
+import { Modal, View, StyleSheet, Text, TouchableOpacity, ImageBackground, Button, BackHandler } from 'react-native';
 import Botones from './botones';
 import Figuras from './figuras';
 
@@ -229,7 +229,9 @@ export default function Tablero({ onChangeView }) {
 
     return boardCopy;
   };
-
+  const closeApp = () => {
+    BackHandler.exitApp(); // This will exit the app on Android
+  };
   const moveLeft = () => movePiece({ x: -1, y: 0 });
   const moveRight = () => movePiece({ x: 1, y: 0 });
   const moveDown = () => movePiece({ x: 0, y: 1 });
@@ -250,6 +252,12 @@ export default function Tablero({ onChangeView }) {
           <Button
             title='reiniciar'
             onPress={() => resetGame()}
+          ></Button>
+        </View>
+        <View style={{ alignContent: "center", marginBottom:20 }}>
+          <Button
+            title='salir'
+            onPress={() => closeApp()}
           ></Button>
         </View>
         <View>
