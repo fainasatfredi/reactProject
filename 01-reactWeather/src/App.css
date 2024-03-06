@@ -1,0 +1,45 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+  
+}
+.cuerpo{
+  background-image: url('assets/img/imgLluvia.jpg');
+  background-size:cover;
+  background-repeat:no-repeat ;
+
+
+}
+.lluvia{
+  width: 100%;
+}
+.principal{
+  width: 20%;
+}
+main{
+  display: block;
+  border: solid 1px red;
+
+}
+.icon{
+  width: 2.5%;
+}
+.blanco{
+  color: white;
+}
+.gris{
+  color: gray;
+}.escribir{
+  width: 95%;
+}.buscar{
+  width: 5%;
+  background-image: url("src/assets/img/search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  vertical-align: middle;
+}.imagen{
+  width: 10%;
+}
