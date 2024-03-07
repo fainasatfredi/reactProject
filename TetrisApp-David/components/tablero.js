@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Modal, View, StyleSheet, Text, TouchableOpacity, ImageBackground, Button, BackHandler } from 'react-native';
 import Botones from './botones';
 import Figuras from './figuras';
+import PantallaGameOver from './modal';
 
 // Define the board dimensions
 const numCols = 10;
@@ -153,7 +154,7 @@ export default function Tablero({ onChangeView }) {
       setGameOver(true);
       setScore(0);
     } else {
-      setCurrentPiece(nextPiece); // Set the next piece as the current piece
+      setCurrentPiece(nextPiece); 
       setNextPiece(getRandomFigure());
       setPosition({ x: numCols / 2 - 1, y: 0 });
     }
@@ -161,7 +162,7 @@ export default function Tablero({ onChangeView }) {
 
   const clearLines = (boardToCheck) => {
     let linesCleared = 0;
-    let newBoard = boardToCheck.map(row => [...row]); // Create a deep copy of the board
+    let newBoard = boardToCheck.map(row => [...row]); 
 
     for (let y = newBoard.length - 1; y >= 0; y--) {
       if (newBoard[y].every(cell => cell !== 0)) {
@@ -229,8 +230,10 @@ export default function Tablero({ onChangeView }) {
 
     return boardCopy;
   };
+
+  
   const closeApp = () => {
-    BackHandler.exitApp(); // This will exit the app on Android
+    BackHandler.exitApp(); 
   };
   const moveLeft = () => movePiece({ x: -1, y: 0 });
   const moveRight = () => movePiece({ x: 1, y: 0 });
@@ -312,30 +315,7 @@ export default function Tablero({ onChangeView }) {
         <Botones name="refresh" onPress={() => rotate('rotate')} />
       </View>
       <View>
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={isModalVisible}
-          onRequestClose={() => setIsModalVisible(false)}
-        >
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              <Text style={styles.modalText}>Game Over</Text>
-              <TouchableOpacity
-                style={styles.retryButton}
-                onPress={resetGame}
-              >
-                <Text>Retry</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.exitButton}
-                onPress={handleExit}
-              >
-                <Text>Exit</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </Modal>
+        <PantallaGameOver isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} resetGame={resetGame} handleExit={handleExit}/>
       </View>
     </View>
   );
@@ -390,49 +370,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 15
   },
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 15,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center"
-  },
-  retryButton: {
-    backgroundColor: "#2196F3",
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
-    marginBottom: 10,
-  },
-  exitButton: {
-    backgroundColor: "#f44336",
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
-  },
+ 
   nextPieceContainer: {
     borderColor: "grey",
     height: 20,
-    width: 80, // Adjust the size as needed
+    width: 80, 
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -442,8 +384,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   previewCell: {
-    width: 20, // Adjust the size as needed
-    height: 20, // Adjust the size as needed
+    width: 20,
+    height: 20, 
     borderWidth: 1,
     borderColor: 'grey',
   },
