@@ -154,7 +154,7 @@ export default function Tablero({ onChangeView }) {
       setGameOver(true);
       setScore(0);
     } else {
-      setCurrentPiece(nextPiece); // Set the next piece as the current piece
+      setCurrentPiece(nextPiece); 
       setNextPiece(getRandomFigure());
       setPosition({ x: numCols / 2 - 1, y: 0 });
     }
@@ -162,7 +162,7 @@ export default function Tablero({ onChangeView }) {
 
   const clearLines = (boardToCheck) => {
     let linesCleared = 0;
-    let newBoard = boardToCheck.map(row => [...row]); // Create a deep copy of the board
+    let newBoard = boardToCheck.map(row => [...row]); 
 
     for (let y = newBoard.length - 1; y >= 0; y--) {
       if (newBoard[y].every(cell => cell !== 0)) {
@@ -233,7 +233,7 @@ export default function Tablero({ onChangeView }) {
 
   
   const closeApp = () => {
-    BackHandler.exitApp(); // This will exit the app on Android
+    BackHandler.exitApp(); 
   };
   const moveLeft = () => movePiece({ x: -1, y: 0 });
   const moveRight = () => movePiece({ x: 1, y: 0 });
@@ -374,7 +374,7 @@ const styles = StyleSheet.create({
   nextPieceContainer: {
     borderColor: "grey",
     height: 20,
-    width: 80, // Adjust the size as needed
+    width: 80, 
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -384,8 +384,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   previewCell: {
-    width: 20, // Adjust the size as needed
-    height: 20, // Adjust the size as needed
+    width: 20,
+    height: 20, 
     borderWidth: 1,
     borderColor: 'grey',
   },

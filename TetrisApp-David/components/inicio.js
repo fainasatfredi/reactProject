@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, TouchableOpacity, ImageBackground, View, StyleSheet } from 'react-native';
 import Tablero from './tablero';
-import {colors} from '../styles/colors'; // Asegúrate de que este archivo exista y esté correctamente exportado.
+import {colors} from '../styles/colors';
 
 export default function Inicio() {
   const [currentView, setCurrentView] = useState('inicio');

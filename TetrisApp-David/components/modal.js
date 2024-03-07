@@ -36,7 +36,7 @@ centeredView: {
     justifyContent: "center",
     alignItems: "center",
     marginTop: 15,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
   },
   modalView: {
     margin: 20,
